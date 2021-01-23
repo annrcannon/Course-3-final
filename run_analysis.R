@@ -1,5 +1,6 @@
 #Read in necessary libaries
 library(dplyr)
+library(reshape2)
 
 #Read in all the data sets
 subjectidTest <- read.table("data/test/subject_test.txt")
@@ -23,8 +24,6 @@ newmeasuresTrain <- measuresTrain[,columnsofInterest]
 #Assign variable names to the measures data frames
 names(newmeasuresTest) <- features[columnsofInterest,2]
 names(newmeasuresTrain) <- features[columnsofInterest,2]
-
-#Change activity numbers to activity names
 
 #Create the full Test and Train data frames
 fullTest <- cbind(activityTest,newmeasuresTest)
